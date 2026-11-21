@@ -1,1 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Kowshika Sri S, MCA student and computer science graduate.">
+  <title>Kowshika Sri S | Portfolio</title>
+  <style>
+    :root {
+      --ink: #20233a;
+      --muted: #656a7f;
+      --accent: #7557d9;
+      --accent-light: #eee9ff;
+      --surface: #ffffff;
+      --background: #f8f7fc;
+      --border: #e8e5f0;
+    }
 
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgb(248 247 252 / 92%);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.94rem;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      min-height: 470px;
+      display: grid;
+      align-items: center;
+      padding: 82px 0;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 12px 0;
+      font-size: clamp(2.7rem, 7vw, 5.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.065em;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.12rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 11px 18px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button:hover { background: #6042c3; }
+
+    section { padding: 58px 0; }
+
+    .section-heading {
+      margin: 0 0 24px;
+      font-size: clamp(1.7rem, 4vw, 2.3rem);
+      letter-spacing: -0.045em;
+    }
+
+    .about-card, .card, .education-item, .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgb(36 28 75 / 4%);
+    }
+
+    .about-card { padding: 26px; }
+
+    .about-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card { padding: 23px; }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--accent-light);
+      color: #5138a4;
+      font-size: 0.86rem;
+      font-weight: 650;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .education-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 18px;
+      padding: 20px 22px;
+    }
+
+    .date {
+      color: var(--accent);
+      font-weight: 750;
+    }
+
+    .education-item h3 { margin: 0; font-size: 1.05rem; }
+    .education-item p { margin: 4px 0 0; color: var(--muted); }
+
+    .contact-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 26px;
+    }
+
+    .contact-card p { margin: 4px 0 0; color: var(--muted); }
+
+    footer {
+      padding: 24px 0 36px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: 0.84rem; }
+      .hero { min-height: 390px; padding: 62px 0; }
+      .grid { grid-template-columns: 1fr; }
+      .education-item { grid-template-columns: 1fr; gap: 2px; }
+      section { padding: 42px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="#home">Kowshika Sri S</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div>
+        <div class="eyebrow">MCA Student · Computer Science</div>
+        <h1>Hi, I’m Kowshika.</h1>
+        <p>
+          I’m a Master of Computer Applications student with a background in
+          Computer Science and Artificial Intelligence. I’m interested in
+          building practical software and continuing to grow as a developer.
+        </p>
+        <a class="button" href="#projects">Explore my projects</a>
+      </div>
+    </section>
+
+    <section class="container" id="about">
+      <h2 class="section-heading">About me</h2>
+      <div class="about-card">
+        <p>
+          I’m currently pursuing my MCA at Vellalar College for Women. My
+          academic projects have given me experience exploring web applications,
+          machine learning, and software development. I’m organized, motivated,
+          and comfortable learning independently or working as part of a team.
+        </p>
+        <div class="tag-list" aria-label="Technical skills">
+          <span class="tag">Python</span>
+          <span class="tag">Java</span>
+          <span class="tag">R</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="projects">
+      <h2 class="section-heading">Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Crop Disease Prediction</h3>
+          <p>
+            Built a web application using a convolutional neural network (CNN),
+            Python, and MySQL to identify plant-leaf disease at an early stage.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Python</span>
+            <span class="tag">CNN</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Smart Home Control System</h3>
+          <p>
+            Built a Java web application designed to control home appliances
+            over the internet.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Java</span>
+            <span class="tag">Web Application</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="education">
+      <h2 class="section-heading">Education</h2>
+      <div class="timeline">
+        <article class="education-item">
+          <div class="date">2025–2027</div>
+          <div>
+            <h3>Master of Computer Applications</h3>
+            <p>Vellalar College for Women · 75.2% through semester two</p>
+          </div>
+        </article>
+
+        <article class="education-item">
+          <div class="date">2022–2025</div>
+          <div>
+            <h3>B.Sc. Computer Science with Artificial Intelligence</h3>
+            <p>Vellalar College for Women · 76%</p>
+          </div>
+        </article>
+
+        <article class="education-item">
+          <div class="date">2021–2022</div>
+          <div>
+            <h3>Higher Secondary Certificate (HSC)</h3>
+            <p>Roots Matriculation Higher Secondary School · 71%</p>
+          </div>
+        </article>
+
+        <article class="education-item">
+          <div class="date">2019–2020</div>
+          <div>
+            <h3>Secondary School Leaving Certificate (SSLC)</h3>
+            <p>Roots Matriculation Higher Secondary School · 85.6%</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="learning">
+      <h2 class="section-heading">Courses & activities</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Deep Learning</h3>
+          <p>Completed an NPTEL course with a score of 65%.</p>
+        </article>
+        <article class="card">
+          <h3>Python Programming</h3>
+          <p>Completed a certificate course in Python programming.</p>
+        </article>
+        <article class="card">
+          <h3>Power BI</h3>
+          <p>Attended a workshop on Power BI.</p>
+        </article>
+        <article class="card">
+          <h3>Web Development</h3>
+          <p>Attended a one-day web development workshop.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <h2 class="section-heading">Get in touch</h2>
+      <div class="contact-card">
+        <div>
+          <strong>Let’s connect</strong>
+          <p>Feel free to contact me about opportunities or collaboration.</p>
+        </div>
+        <a class="button" href="mailto:kowshi2709@gmail.com">Email me</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Kowshika Sri S</div>
+  </footer>
+</body>
+</html>
